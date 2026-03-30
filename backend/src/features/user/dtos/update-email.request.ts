@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { zodSafeEmail } from "../validators/email.validator";
+import { zodSafeEmail } from "../../../backend/src/shared/validators/email.validator";
 
 export const updateEmailRequest = z.strictObject({
   email: zodSafeEmail(),

@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { zodPasswordValidator } from "../validators/common-fields.validator";
+import { zodPasswordValidator } from "../../../backend/src/shared/validators/common-fields.validator";
 
 export const updatePasswordRequest = z
   .strictObject({

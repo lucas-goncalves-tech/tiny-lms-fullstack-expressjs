@@ -1,5 +1,5 @@
 {
-  "name": "api-lms-nodejs",
+  "name": "tiny-lms-express",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.ts",
@@ -17,9 +17,13 @@
     "db:seed": "tsx --env-file=.env src/db/seed.ts",
     "db:all": "drizzle-kit generate && drizzle-kit migrate && tsx --env-file=.env src/db/seed.ts"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "backend",
+    "tiny lms",
+    "express"
+  ],
+  "author": "Drummonds",
+  "license": "MIT",
   "devDependencies": {
     "@eslint/js": "^9.39.1",
     "@types/better-sqlite3": "^7.6.13",

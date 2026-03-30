@@ -1,7 +1,7 @@
 import { z } from "zod";
-import { zodSafeEmail } from "../validators/email.validator";
-import { zodPasswordValidator } from "../validators/common-fields.validator";
-import { zodNameValdiator } from "../validators/common-fields.validator";
+import { zodSafeEmail } from "../../../backend/src/shared/validators/email.validator";
+import { zodPasswordValidator } from "../../../backend/src/shared/validators/common-fields.validator";
+import { zodNameValdiator } from "../../../backend/src/shared/validators/common-fields.validator";
 
 export const createUserRequest = z
   .strictObject({
