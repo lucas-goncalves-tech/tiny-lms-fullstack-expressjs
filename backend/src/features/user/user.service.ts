@@ -1,8 +1,8 @@
-import { UpdatePasswordRequest } from "@lms/dtos";
 import { ConflictError } from "../../shared/errors/conflict.error";
 import { UnauthorizedError } from "../../shared/errors/unauthorized.error";
 import { UnprocessableEntityError } from "../../shared/errors/unprocessable-entity.error";
 import { CryptoService } from "../../shared/security/crypto-service.security";
+import { UpdatePasswordRequest } from "./dtos/update-password.dto";
 
 import { UserRepository } from "./user.repository";
 

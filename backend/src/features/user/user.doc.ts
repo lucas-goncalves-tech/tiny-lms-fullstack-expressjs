@@ -1,10 +1,11 @@
-import { updateEmailRequest, updatePasswordRequest } from "@lms/dtos";
 import {
   badRequestResponse,
   conflictResponse,
   unauthorizedResponse,
 } from "../../doc/errors/errors";
 import { registry } from "../../doc/openapi.registry";
+import { updateEmailRequest } from "./dtos/update-email.request";
+import { updatePasswordRequest } from "./dtos/update-password.dto";
 
 registry.registerPath({
   path: "/user/password/update",

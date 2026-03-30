@@ -1,4 +1,3 @@
-import { updatePasswordRequest, updateEmailRequest } from "@lms/dtos";
 import { Router } from "express";
 import { UserController } from "./user.controller";
 import { DataBase } from "../../db";
@@ -11,6 +10,8 @@ import { noCacheMiddleware } from "../../shared/middlewares/no-cache.middleware"
 import { validateMiddleware } from "../../shared/middlewares/validate.middleware";
 
 import { rateLimitMiddleware } from "../../shared/middlewares/rate-limit.middleware";
+import { updateEmailRequest } from "./dtos/update-email.request";
+import { updatePasswordRequest } from "./dtos/update-password.dto";
 
 export class UserRoutes {
   private readonly controller: UserController;

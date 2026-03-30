@@ -1,8 +1,9 @@
-import { UpdatePasswordRequest, UpdateEmailRequest } from "@lms/dtos";
 import { Request, Response } from "express";
 
 import { UserService } from "./user.service";
 import { SessionsService } from "../sessions/sessions.service";
+import { UpdateEmailRequest } from "./dtos/update-email.request";
+import { UpdatePasswordRequest } from "./dtos/update-password.dto";
 
 export class UserController {
   private readonly ttl: number;
