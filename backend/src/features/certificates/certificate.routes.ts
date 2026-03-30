@@ -1,4 +1,3 @@
-import { certificateIdParamsRequest } from "@lms/dtos";
 import { DataBase } from "../../db";
 import { validateMiddleware } from "../../shared/middlewares/validate.middleware";
 import { CertificateRepository } from "./certificate.repository";
@@ -11,6 +10,7 @@ import { SessionsService } from "../sessions/sessions.service";
 import { UserRepository } from "../user/user.repository";
 import { CryptoService } from "../../shared/security/crypto-service.security";
 import { SessionsRepository } from "../sessions/sessions.repository";
+import { certificateIdParamsRequest } from "./dtos/certificate-params.dto";
 
 export class CertificatesRoutes {
   private readonly router = Router();
