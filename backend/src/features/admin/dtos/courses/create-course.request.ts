@@ -3,7 +3,7 @@ import {
   zodSlugValidator,
   zodTitleValidator,
   zodDescriptionValidator,
-} from "../../validators/common-fields.validator";
+} from "../../../../shared/validators/common-fields.validator";
 
 export const createCourseRequest = z.strictObject({
   slug: zodSlugValidator(),

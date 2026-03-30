@@ -1,15 +1,3 @@
-import {
-  createCourseRequest,
-  updateCourseRequest,
-  createLessonRequest,
-  courseSlugParamsRequest,
-  userIdParamsSchema,
-  updateUserRequest,
-  adminCreateUserSchema,
-  lessonSlugParamsRequest,
-  updateLessonRequest,
-  userQueryRequest,
-} from "@lms/dtos";
 import { Router } from "express";
 import { DataBase } from "../../db";
 import { validateMiddleware } from "../../shared/middlewares/validate.middleware";
@@ -28,6 +16,16 @@ import { noCacheMiddleware } from "../../shared/middlewares/no-cache.middleware"
 
 import { validateFileHeadersMiddleware } from "../../shared/middlewares/validate-file-headers.middleware";
 import { UploadService } from "../upload/upload.service";
+import { createCourseRequest } from "./dtos/courses/create-course.request";
+import { courseSlugParamsRequest } from "../course/dtos/course-params";
+import { updateCourseRequest } from "./dtos/courses/update-course.request";
+import { createLessonRequest } from "./dtos/lessons/create-lesson.request";
+import { lessonSlugParamsRequest } from "../course/dtos/lesson-params";
+import { updateLessonRequest } from "./dtos/lessons/update-lesson.request";
+import { userQueryRequest } from "./dtos/users/users-query.request";
+import { userIdParamsSchema } from "./dtos/common/admin.params";
+import { updateUserRequest } from "./dtos/users/update-user.request";
+import { adminCreateUserRequest } from "./dtos/users/create-user.request";
 
 export class AdminRoutes {
   private readonly controller: AdminController;
@@ -109,7 +107,7 @@ export class AdminRoutes {
     );
     this.router.post(
       "/users/new",
-      validateMiddleware({ body: adminCreateUserSchema }),
+      validateMiddleware({ body: adminCreateUserRequest }),
       this.controller.createUser
     );
     this.router.patch(

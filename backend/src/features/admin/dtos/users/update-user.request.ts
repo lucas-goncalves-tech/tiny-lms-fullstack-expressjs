@@ -2,7 +2,7 @@ import z from "zod";
 import {
   zodNameValdiator,
   zodRoleValidator,
-} from "../../validators/common-fields.validator";
+} from "../../../../shared/validators/common-fields.validator";
 
 export const updateUserRequest = z
   .strictObject({

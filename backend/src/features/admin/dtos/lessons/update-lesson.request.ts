@@ -4,8 +4,8 @@ import {
   zodTitleValidator,
   zodDescriptionValidator,
   zodIntegerValidator,
-} from "../../validators/common-fields.validator";
-import { zodSafeString } from "../../validators/string.validator copy";
+} from "../../../../shared/validators/common-fields.validator";
+import { zodSafeString } from "../../../../shared/validators/string.validator";
 
 export const updateLessonRequest = z.strictObject({
   slug: zodSlugValidator().optional(),

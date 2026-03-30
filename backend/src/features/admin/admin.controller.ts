@@ -1,16 +1,14 @@
-import {
-  CreateCourseRequest,
-  CreateLessonRequest,
-  UpdateCourseRequest,
-  UpdateUserRequest,
-  AdminCreateUserDTO,
-  UpdateLessonRequest,
-  UserQueryRequest,
-} from "@lms/dtos";
 import { Request, Response } from "express";
 import { AdminService } from "./admin.service";
 
 import { UploadService } from "../upload/upload.service";
+import { CreateCourseRequest } from "./dtos/courses/create-course.request";
+import { UpdateCourseRequest } from "./dtos/courses/update-course.request";
+import { CreateLessonRequest } from "./dtos/lessons/create-lesson.request";
+import { UpdateLessonRequest } from "./dtos/lessons/update-lesson.request";
+import { AdminCreateUserRequest } from "./dtos/users/create-user.request";
+import { UpdateUserRequest } from "./dtos/users/update-user.request";
+import { UserQueryRequest } from "./dtos/users/users-query.request";
 
 export class AdminController {
   constructor(
@@ -109,7 +107,7 @@ export class AdminController {
   };
 
   createUser = async (req: Request, res: Response) => {
-    const userData = req.body as AdminCreateUserDTO;
+    const userData = req.body as AdminCreateUserRequest;
     await this.adminService.createUser(userData);
 
     res.status(201).json({

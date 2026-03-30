@@ -1,10 +1,3 @@
-import {
-  CreateLessonRequest,
-  UpdateCourseRequest,
-  AdminCreateUserDTO,
-  UpdateLessonRequest,
-  UserQueryRequest,
-} from "@lms/dtos";
 import { ConflictError } from "../../shared/errors/conflict.error";
 import { NotfoundError } from "../../shared/errors/not-found.error";
 import { CourseRepository } from "../course/course.repository";
@@ -19,6 +12,11 @@ import { CryptoService } from "../../shared/security/crypto-service.security";
 import { UnprocessableEntityError } from "../../shared/errors/unprocessable-entity.error";
 import { UploadService } from "../upload/upload.service";
 import { BadRequestError } from "../../shared/errors/bad-request.error";
+import { UpdateCourseRequest } from "./dtos/courses/update-course.request";
+import { CreateLessonRequest } from "./dtos/lessons/create-lesson.request";
+import { UpdateLessonRequest } from "./dtos/lessons/update-lesson.request";
+import { UserQueryRequest } from "./dtos/users/users-query.request";
+import { AdminCreateUserRequest } from "./dtos/users/create-user.request";
 
 export class AdminService {
   constructor(
@@ -149,7 +147,7 @@ export class AdminService {
     await this.userRepository.updateByAdmin(userId, userData);
   }
 
-  async createUser(userData: AdminCreateUserDTO) {
+  async createUser(userData: AdminCreateUserRequest) {
     const userExist = await this.userRepository.findByKey("email", userData.email);
     if (userExist) throw new ConflictError("Email já cadastrado");
     const passwordhase = await this.cryptoService.hash(userData.password);

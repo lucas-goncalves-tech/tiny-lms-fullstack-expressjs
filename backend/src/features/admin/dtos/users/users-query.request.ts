@@ -1,6 +1,6 @@
 import z from "zod";
-import { zodIntegerValidator } from "../../validators/common-fields.validator";
-import { zodSafeString } from "../../validators/string.validator copy";
+import { zodIntegerValidator } from "../../../../shared/validators/common-fields.validator";
+import { zodSafeString } from "../../../../shared/validators/string.validator";
 
 export const userQueryRequest = z.strictObject({
   search: zodSafeString().optional(),

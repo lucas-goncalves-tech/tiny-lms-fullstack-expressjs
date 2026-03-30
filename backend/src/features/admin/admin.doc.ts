@@ -1,18 +1,4 @@
 import {
-  adminCreateUserSchema,
-  adminMessageResponse,
-  findManyCoursesReponse,
-  findManylessonsResponse,
-  findManyUsersResponse,
-  uploadVideoHeaders,
-  uploadVideoResponse,
-  createCourseRequest,
-  createLessonRequest,
-  updateCourseRequest,
-  updateLessonRequest,
-  updateUserRequest,
-} from "@lms/dtos";
-import {
   badRequestResponse,
   conflictResponse,
   forbiddenResponse,
@@ -20,6 +6,17 @@ import {
   unauthorizedResponse,
 } from "../../doc/errors/errors";
 import { registry } from "../../doc/openapi.registry";
+import { adminMessageResponse } from "./dtos/common/admin-message.response";
+import { createCourseRequest } from "./dtos/courses/create-course.request";
+import { findManyCoursesReponse } from "./dtos/courses/find-many.response";
+import { updateCourseRequest } from "./dtos/courses/update-course.request";
+import { createLessonRequest } from "./dtos/lessons/create-lesson.request";
+import { findManylessonsResponse } from "./dtos/lessons/find-many.response";
+import { updateLessonRequest } from "./dtos/lessons/update-lesson.request";
+import { uploadVideoHeaders, uploadVideoResponse } from "./dtos/upload/upload-video.response";
+import { adminCreateUserRequest } from "./dtos/users/create-user.request";
+import { findManyUsersResponse } from "./dtos/users/find-many.response";
+import { updateUserRequest } from "./dtos/users/update-user.request";
 
 registry.registerPath({
   path: "/admin/courses",
@@ -343,7 +340,7 @@ registry.registerPath({
     body: {
       content: {
         "application/json": {
-          schema: adminCreateUserSchema,
+          schema: adminCreateUserRequest,
           example: {
             name: "Usuario 10",
             email: "usuario10@gmail.com",

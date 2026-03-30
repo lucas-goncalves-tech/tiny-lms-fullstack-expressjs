@@ -1,5 +1,5 @@
 import z from "zod";
-import { zodSafeString } from "./string.validator copy";
+import { zodSafeString } from "./string.validator";
 
 export const zodSlugValidator = (slugName = "Slug") =>
   zodSafeString()

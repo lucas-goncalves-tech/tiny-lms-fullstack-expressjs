@@ -3,10 +3,10 @@ import {
   zodNameValdiator,
   zodPasswordValidator,
   zodRoleValidator,
-} from "../../validators/common-fields.validator";
-import { zodSafeEmail } from "../../validators/email.validator";
+} from "../../../../shared/validators/common-fields.validator";
+import { zodSafeEmail } from "../../../../shared/validators/email.validator";
 
-export const adminCreateUserSchema = z
+export const adminCreateUserRequest = z
   .strictObject({
     name: zodNameValdiator(),
     email: zodSafeEmail(),
@@ -19,4 +19,4 @@ export const adminCreateUserSchema = z
     path: ["confirmPassword"],
   });
 
-export type AdminCreateUserDTO = z.infer<typeof adminCreateUserSchema>;
+export type AdminCreateUserRequest = z.infer<typeof adminCreateUserRequest>;

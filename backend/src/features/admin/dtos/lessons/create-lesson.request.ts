@@ -4,7 +4,7 @@ import {
   zodTitleValidator,
   zodDescriptionValidator,
   zodIntegerValidator,
-} from "../../validators/common-fields.validator";
+} from "../../../../shared/validators/common-fields.validator";
 
 export const createLessonRequest = z.strictObject({
   slug: zodSlugValidator(),
