@@ -1,4 +1,3 @@
-import { createUserRequest, loginRequest } from "@lms/dtos";
 import { DataBase } from "../../db";
 import { AuthService } from "./auth.service";
 import { AuthController } from "./auth.controller";
@@ -12,6 +11,8 @@ import { SessionsService } from "../sessions/sessions.service";
 import { ValidateSessionMiddleware } from "../../shared/middlewares/validate-session.middleware";
 import { noCacheMiddleware } from "../../shared/middlewares/no-cache.middleware";
 import { rateLimitMiddleware } from "../../shared/middlewares/rate-limit.middleware";
+import { createUserRequest } from "./dtos/create-user.request";
+import { loginRequest } from "./dtos/login.request";
 
 export class AuthRoutes {
   private readonly controller: AuthController;

@@ -1,4 +1,3 @@
-import { createUserResponse, createUserRequest, loginRequest } from "@lms/dtos";
 import {
   badRequestResponse,
   conflictResponse,
@@ -6,6 +5,9 @@ import {
   unauthorizedResponse,
 } from "../../doc/errors/errors";
 import { registry } from "../../doc/openapi.registry";
+import { createUserRequest } from "./dtos/create-user.request";
+import { createUserResponse } from "./dtos/create-user.response";
+import { loginRequest } from "./dtos/login.request";
 
 registry.registerPath({
   path: "/auth/register",

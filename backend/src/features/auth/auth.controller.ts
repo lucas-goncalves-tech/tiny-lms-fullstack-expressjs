@@ -1,8 +1,9 @@
-import { CreateUserRequest, LoginRequest } from "@lms/dtos";
 import { AuthService } from "./auth.service";
 import { Request, Response } from "express";
 
 import { SessionsService } from "../sessions/sessions.service";
+import { CreateUserRequest } from "./dtos/create-user.request";
+import { LoginRequest } from "./dtos/login.request";
 
 export class AuthController {
   private readonly ttl: number;

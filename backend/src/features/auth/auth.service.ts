@@ -1,10 +1,11 @@
-import { CreateUserRequest, LoginRequest } from "@lms/dtos";
 import { ConflictError } from "../../shared/errors/conflict.error";
 import { ForbiddenError } from "../../shared/errors/forbidden.error";
 import { UnauthorizedError } from "../../shared/errors/unauthorized.error";
 import { CryptoService } from "../../shared/security/crypto-service.security";
 import { ICreateUserInput } from "../user/interface/user.interface";
 import { UserRepository } from "../user/user.repository";
+import { CreateUserRequest } from "./dtos/create-user.request";
+import { LoginRequest } from "./dtos/login.request";
 
 export class AuthService {
   private readonly cryptoService = new CryptoService();
