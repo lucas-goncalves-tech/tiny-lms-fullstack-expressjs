@@ -1,7 +1,13 @@
 {
   "name": "lms-fullstack",
   "version": "1.0.0",
-  "description": "",
+  "description": "Tiny lms",
+  "keywords": [
+    "fullstack",
+    "express",
+    "expo",
+    "react-native"
+  ],
   "homepage": "https://github.com/lucas-goncalves-tech/lms-fullstack#readme",
   "bugs": {
     "url": "https://github.com/lucas-goncalves-tech/lms-fullstack/issues"
@@ -10,15 +16,14 @@
     "type": "git",
     "url": "git+https://github.com/lucas-goncalves-tech/lms-fullstack.git"
   },
-  "license": "ISC",
+  "license": "MIT",
   "author": "Drummonds",
+  "type": "commonjs",
   "scripts": {
-    "docker:up": "docker compose up -d",
-    "docker:down": "docker compose down",
-    "docker:logs": "docker compose logs -f",
-    "logs:api": "docker compose logs api -f",
-    "lint:back": "npm run lint:fix --prefix backend",
-    "lint:front": "npm run lint:fix --prefix frontend",
-    "lint": "npm run lint:back && npm run lint:front"
+    "android": "cd mobile && npm run android",
+    "ios": "cd mobile && npm run ios",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:mobile": "cd mobile && npm run dev",
+    "dev": "npm run dev:backend & npm run dev:mobile"
   }
 }
